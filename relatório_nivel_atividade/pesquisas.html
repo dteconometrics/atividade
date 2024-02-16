@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt" xml:lang="pt"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Núcleo de Dados  ADEPE &nbsp; &nbsp; &nbsp; ">
+
+<title> Relatório - Pesquisas Mensais (PIM, PMC, PMS)</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="pesquisas_files/libs/clipboard/clipboard.min.js"></script>
+<script src="pesquisas_files/libs/quarto-html/quarto.js"></script>
+<script src="pesquisas_files/libs/quarto-html/popper.min.js"></script>
+<script src="pesquisas_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="pesquisas_files/libs/quarto-html/anchor.min.js"></script>
+<link href="pesquisas_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="pesquisas_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="pesquisas_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="pesquisas_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="pesquisas_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-full">
+
+<main class="content column-page" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><img src="logo2.png" height="40"> Relatório - Pesquisas Mensais (PIM, PMC, PMS)</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Autor</div>
+    <div class="quarto-title-meta-contents">
+             <p>Núcleo de Dados <br><span style="font-size: 110%;">ADEPE<br><a href="https://github.com/dteconometrics"><svg aria-hidden="true" role="img" viewbox="0 0 496 512" style="height:1em;width:0.97em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#282f6b;overflow:visible;position:relative;"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg></a>&nbsp; <a href="https://www.linkedin.com/in/vinicius-limeira-565117180/"><svg aria-hidden="true" role="img" viewbox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#282f6b;overflow:visible;position:relative;"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg></a>&nbsp; <a href="mailto:vinicius.valenca@adepe.pe.gov.br"><svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#282f6b;overflow:visible;position:relative;"><path d="M64 112c-8.8 0-16 7.2-16 16v22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16H64zM48 212.2V384c0 8.8 7.2 16 16 16H448c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64H448c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z"></path></svg></a>&nbsp; <a href="https://www.adepe.pe.gov.br/"><svg aria-hidden="true" role="img" viewbox="0 0 576 512" style="height:1em;width:1.12em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#282f6b;overflow:visible;position:relative;"><path d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"></path></svg></a></span> </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Data de Publicação</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">12 de dezembro de 2023</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<div class="grid">
+<section id="pesquisa-industrial-mensal-pim" class="level2 g-col-7">
+<h2 class="anchored" data-anchor-id="pesquisa-industrial-mensal-pim">Pesquisa Industrial Mensal (PIM)</h2>
+<ul>
+<li><p>O resultado nacional da Pesquisa Industrial veio bem acima das expectativas de mercado, registrando um crescimento anual de 0,2% em 2023. Em comparação com o mesmo mês do ano anterior, o setor apresentou um crescimento de 1,1%, surpreendendo as expectativas de uma queda de 0,5%.</p></li>
+<li><p>Os resultados apresentados na tabela ao lado refletem o desempenho da indústria em Pernambuco e nos demais estados do Nordeste, além de sua média agregada. É digno de nota o destaque de Pernambuco no mês de dezembro, evidenciado por um crescimento ligeiramente superior a 15% em comparação com o mesmo período do ano anterior.</p></li>
+<li><p>O mesmo destaque é válido ao observar os resultados em comparação com o mês imediatamente anterior, com um crescimento ligeiramente superior a 11%. Esses números refletem uma tendência positiva e um desempenho robusto no setor industrial, especialmente notável dada a sazonalidade inerente ao período.</p></li>
+<li><p>Espera-se uma maior volatilidade nesta época do ano devido à sazonalidade esperada. Apesar do otimismo inicial em relação à conjuntura econômica para o ano de 2024, prevê-se um crescimento moderado, influenciado pela política monetária ainda em níveis restritivos e uma demanda enfraquecida, mesmo com a perspectiva de queda de juros e um mercado de trabalho resiliente.</p></li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<strong>Conceito</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Sobre a PIM: Produz indicadores de curto prazo relativos ao comportamento do produto real da indústria, tendo como unidade de investigação a empresa formalmente constituída cuja principal fonte de receita seja a atividade industrial.</p>
+</div>
+</div>
+</section>
+<div class="g-col-5">
+<div class="cell">
+<div class="cell-output-display">
+<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<caption>Produção Industrial: variação interanual</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;" data-quarto-table-cell-role="th">Mês</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Pernambuco</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Ceará</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Bahia</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Nordeste</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">jul 2023</td>
+<td style="text-align: center;">8.86</td>
+<td style="text-align: center;">-5.46</td>
+<td style="text-align: center;">-3.20</td>
+<td style="text-align: center;">-2.60</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">ago 2023</td>
+<td style="text-align: center;">2.76</td>
+<td style="text-align: center;">-12.90</td>
+<td style="text-align: center;">-6.62</td>
+<td style="text-align: center;">-5.63</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">set 2023</td>
+<td style="text-align: center;">-5.53</td>
+<td style="text-align: center;">-11.65</td>
+<td style="text-align: center;">-9.13</td>
+<td style="text-align: center;">-10.26</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">out 2023</td>
+<td style="text-align: center;">11.51</td>
+<td style="text-align: center;">3.24</td>
+<td style="text-align: center;">7.46</td>
+<td style="text-align: center;">1.20</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">nov 2023</td>
+<td style="text-align: center;">-1.78</td>
+<td style="text-align: center;">0.91</td>
+<td style="text-align: center;">8.46</td>
+<td style="text-align: center;">-0.32</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">dez 2023</td>
+<td style="text-align: center;">15.39</td>
+<td style="text-align: center;">6.23</td>
+<td style="text-align: center;">4.99</td>
+<td style="text-align: center;">2.81</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<caption>Produção Industrial: variação na Margem</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;" data-quarto-table-cell-role="th">Mês</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Pernambuco</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Ceará</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Bahia</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Nordeste</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">jul 2023</td>
+<td style="text-align: center;">-0.41</td>
+<td style="text-align: center;">1.08</td>
+<td style="text-align: center;">-5.89</td>
+<td style="text-align: center;">-1.94</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">ago 2023</td>
+<td style="text-align: center;">-4.09</td>
+<td style="text-align: center;">-3.65</td>
+<td style="text-align: center;">-3.18</td>
+<td style="text-align: center;">-1.26</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">set 2023</td>
+<td style="text-align: center;">-13.49</td>
+<td style="text-align: center;">3.16</td>
+<td style="text-align: center;">-4.52</td>
+<td style="text-align: center;">-5.34</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">out 2023</td>
+<td style="text-align: center;">11.14</td>
+<td style="text-align: center;">1.85</td>
+<td style="text-align: center;">9.11</td>
+<td style="text-align: center;">3.72</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">nov 2023</td>
+<td style="text-align: center;">-11.10</td>
+<td style="text-align: center;">1.94</td>
+<td style="text-align: center;">2.77</td>
+<td style="text-align: center;">-1.28</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">dez 2023</td>
+<td style="text-align: center;">11.60</td>
+<td style="text-align: center;">5.03</td>
+<td style="text-align: center;">-1.42</td>
+<td style="text-align: center;">2.73</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="pesquisas_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="2700"></p>
+</div>
+</div>
+</div>
+<section id="pesquisa-mensal-de-serviços-pms" class="level2 g-col-7">
+<h2 class="anchored" data-anchor-id="pesquisa-mensal-de-serviços-pms">Pesquisa Mensal de Serviços (PMS)</h2>
+<ul>
+<li><p>O resultado nacional de dezembro, o setor de serviços registrou um aumento de 0,3%, abaixo da expectativa de mercado de 0,8%. Apesar disso, três das cinco atividades analisadas apresentaram crescimento. Com essa segunda alta consecutiva, o setor encerrou o ano de 2023 com um crescimento de 2,3%, porém, houve uma queda de 2% em comparação com dezembro de 2022.</p></li>
+<li><p>O desempenho anual do setor de serviços em Pernambuco foi positivo tanto na receita quanto no volume, registrando um aumento de 6,45% e 3,34%, respectivamente. Esses números refletem uma tendência positiva, enquanto os outros resultados são mais afetados pela sazonalidade associada ao período de fim de ano.</p></li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<strong>Conceito</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A Pesquisa Mensal de Serviços produz indicadores que permitem acompanhar o comportamento conjuntural do setor de serviços no País, investigando a receita bruta de serviços nas empresas formalmente constituídas, com 20 ou mais pessoas ocupadas, que desempenham como principal atividade um serviço não financeiro, excluídas as áreas de saúde e educação.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Nota
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Interaja com as tabelas ao lado, para observar os resultado</strong></p>
+</div>
+</div>
+</section>
+<div class="g-col-5">
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Variação da Receita</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Variações do Volume</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">Visualização</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="cell">
+<div class="cell-output-display">
+<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<caption>Pesquisa Mensal de Serviços: Variações da Receita</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Data</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Margem</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Interanual</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Anual</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">2023-07-01</td>
+<td style="text-align: right;">0.29</td>
+<td style="text-align: right;">4.84</td>
+<td style="text-align: right;">11.00</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2023-08-01</td>
+<td style="text-align: right;">-0.47</td>
+<td style="text-align: right;">3.00</td>
+<td style="text-align: right;">9.78</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2023-09-01</td>
+<td style="text-align: right;">1.10</td>
+<td style="text-align: right;">3.27</td>
+<td style="text-align: right;">8.70</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2023-10-01</td>
+<td style="text-align: right;">-0.06</td>
+<td style="text-align: right;">3.99</td>
+<td style="text-align: right;">7.76</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2023-11-01</td>
+<td style="text-align: right;">1.16</td>
+<td style="text-align: right;">5.69</td>
+<td style="text-align: right;">7.23</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2023-12-01</td>
+<td style="text-align: right;">-0.01</td>
+<td style="text-align: right;">2.83</td>
+<td style="text-align: right;">6.42</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="cell">
+<div class="cell-output-display">
+<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<caption>Pesquisa Mensal de Serviços: Variações do Volume</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Data</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Margem</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Interanual</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Anual</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">2023-07-01</td>
+<td style="text-align: right;">0.64</td>
+<td style="text-align: right;">3.70</td>
+<td style="text-align: right;">6.00</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2023-08-01</td>
+<td style="text-align: right;">-1.42</td>
+<td style="text-align: right;">0.65</td>
+<td style="text-align: right;">5.31</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2023-09-01</td>
+<td style="text-align: right;">-0.19</td>
+<td style="text-align: right;">-1.11</td>
+<td style="text-align: right;">4.41</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2023-10-01</td>
+<td style="text-align: right;">-0.55</td>
+<td style="text-align: right;">-0.29</td>
+<td style="text-align: right;">3.59</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2023-11-01</td>
+<td style="text-align: right;">0.91</td>
+<td style="text-align: right;">0.44</td>
+<td style="text-align: right;">3.08</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2023-12-01</td>
+<td style="text-align: right;">0.31</td>
+<td style="text-align: right;">-1.97</td>
+<td style="text-align: right;">2.34</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="pesquisas_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="2700"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section id="pesquisa-mensal-do-comércio-pmc" class="level2 g-col-7">
+<h2 class="anchored" data-anchor-id="pesquisa-mensal-do-comércio-pmc">Pesquisa Mensal do Comércio (PMC)</h2>
+<ul>
+<li><p>No resultado nacional, o volume de vendas no varejo caiu 1,3% no mês de dezembro na série com ajuste sazonal, em contraste com a expectativa de alta do mercado de 0,4%. No entanto, ao longo do ano, o índice apresentou um crescimento de 1,7%, e 1,3% em comparação com o mesmo período de 2022.</p></li>
+<li><p>O desempenho em Pernambuco durante o ano foi positivo, com um aumento de 4,66% na receita e de 2,09% no volume. O único resultado negativo foi referente à margem, ambos negativos. Esses valores também podem ser atribuídos à maior sazonalidade do período.</p></li>
+<li><p>Ao analisarmos os setores, os destaques são: Livros, jornais, revistas e papelaria, Veículos, motocicletas, partes e peças, e Móveis. (<strong>Consultar valores na tabela ao lado</strong>)</p></li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<strong>Conceito</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A Pesquisa Mensal de Comércio produz indicadores que permitem acompanhar o comportamento conjuntural do comércio varejista no País, investigando a receita bruta de revenda nas empresas formalmente constituídas, com 20 ou mais pessoas ocupadas, e cuja atividade principal é o comércio varejista. A pesquisa foi iniciada em janeiro de 1995, apenas na Região Metropolitana do Rio de Janeiro, produzindo indicadores de faturamento real e nominal, pessoal ocupado e salários e outras remunerações.</p>
+</div>
+</div>
+</section>
+<div class="g-col-5">
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">Margem</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Interanual</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false" href="">Anual</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<div class="cell">
+<div class="cell-output-display">
+<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<caption>PMC: números-índices e variações marginais</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;" data-quarto-table-cell-role="th">Date</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Receita</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Volume</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">2023-07-01</td>
+<td style="text-align: center;">3.30</td>
+<td style="text-align: center;">2.09</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2023-08-01</td>
+<td style="text-align: center;">2.04</td>
+<td style="text-align: center;">1.29</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2023-09-01</td>
+<td style="text-align: center;">-0.68</td>
+<td style="text-align: center;">-1.60</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2023-10-01</td>
+<td style="text-align: center;">3.86</td>
+<td style="text-align: center;">4.60</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2023-11-01</td>
+<td style="text-align: center;">3.15</td>
+<td style="text-align: center;">3.24</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2023-12-01</td>
+<td style="text-align: center;">-4.93</td>
+<td style="text-align: center;">-4.16</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<div class="cell">
+<div class="cell-output-display">
+<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<caption>PMC: números-índices e variações interanuais</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;" data-quarto-table-cell-role="th">Date</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Receita</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Volume</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">2023-07-01</td>
+<td style="text-align: center;">2.98</td>
+<td style="text-align: center;">2.28</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2023-08-01</td>
+<td style="text-align: center;">7.12</td>
+<td style="text-align: center;">4.93</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2023-09-01</td>
+<td style="text-align: center;">5.06</td>
+<td style="text-align: center;">1.38</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2023-10-01</td>
+<td style="text-align: center;">10.88</td>
+<td style="text-align: center;">8.24</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2023-11-01</td>
+<td style="text-align: center;">14.44</td>
+<td style="text-align: center;">11.87</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2023-12-01</td>
+<td style="text-align: center;">4.92</td>
+<td style="text-align: center;">3.93</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</div>
+<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
+<div class="cell">
+<div class="cell-output-display">
+<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<caption>PMC: números-índices e variações anuais</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;" data-quarto-table-cell-role="th">Date</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Receita</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Volume</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">2023-07-01</td>
+<td style="text-align: center;">-0.84</td>
+<td style="text-align: center;">-7.25</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2023-08-01</td>
+<td style="text-align: center;">-0.25</td>
+<td style="text-align: center;">-5.76</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2023-09-01</td>
+<td style="text-align: center;">0.40</td>
+<td style="text-align: center;">-4.47</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2023-10-01</td>
+<td style="text-align: center;">1.64</td>
+<td style="text-align: center;">-2.58</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2023-11-01</td>
+<td style="text-align: center;">3.51</td>
+<td style="text-align: center;">-0.04</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2023-12-01</td>
+<td style="text-align: center;">4.66</td>
+<td style="text-align: center;">2.08</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true" href="">Margem</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false" href="">Interanual (%)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-3" role="tab" aria-controls="tabset-3-3" aria-selected="false" href="">Anual</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="pesquisas_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="2700"></p>
+</div>
+</div>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="pesquisas_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="2700"></p>
+</div>
+</div>
+</div>
+<div id="tabset-3-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-3-tab">
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="pesquisas_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" width="2700"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="g-col-5">
+
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<caption>Variações interanuais de Receita</caption>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Artigos farmacêuticos</td>
+<td style="text-align: center;">-1.65</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Atacado especializado em produtos alimentícios, bebidas e fumo</td>
+<td style="text-align: center;">7.24</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Combustíveis e lubrificantes</td>
+<td style="text-align: center;">4.70</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Eletrodomésticos</td>
+<td style="text-align: center;">0.82</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Materiais para escritório</td>
+<td style="text-align: center;">-28.17</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Hipermercados e supermercados</td>
+<td style="text-align: center;">3.94</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Hipermercados, supermercados e outros</td>
+<td style="text-align: center;">1.65</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Livros, jornais, revistas e papelaria</td>
+<td style="text-align: center;">25.06</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Material de construção</td>
+<td style="text-align: center;">-6.64</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Móveis</td>
+<td style="text-align: center;">15.09</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Móveis e eletrodomésticos</td>
+<td style="text-align: center;">4.30</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Outros artigos de uso pessoal e doméstico</td>
+<td style="text-align: center;">-13.51</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Tecidos, vestuário e calçados</td>
+<td style="text-align: center;">6.53</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Veículos, motocicletas, partes e peças</td>
+<td style="text-align: center;">15.72</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</div>
+</div>
+<p>:::</p>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiada");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copiada");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
