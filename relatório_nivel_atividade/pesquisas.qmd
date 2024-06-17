@@ -442,14 +442,11 @@ ampliado_long_pe =
 
 ## Pesquisa Industrial Mensal (PIM)
 
-- O resultado nacional da Pesquisa Industrial veio bem acima das expectativas de mercado, registrando um crescimento anual de 0,2% em 2023. Em comparação com o mesmo mês do ano anterior, o setor apresentou um crescimento de 1,1%, surpreendendo as expectativas de uma queda de 0,5%.
+- Em abril, o crescimento econômico foi impulsionado pelos três principais setores da economia, diferente do que vimos no início do ano. No entanto, a incerteza econômica e os juros altos por mais tempo podem afetar a atividade ao longo do ano. Embora o mercado de trabalho ainda esteja forte, o aumento dos salários pode perder força se a inflação subir e as expectativas piorarem.
 
-- Os resultados apresentados na tabela ao lado refletem o desempenho da indústria em Pernambuco e nos demais estados do Nordeste, além de sua média agregada. É digno de nota o destaque de Pernambuco no mês de dezembro, evidenciado por um crescimento ligeiramente superior a 15% em comparação com o mesmo período do ano anterior. 
+- Os resultados apresentados na tabela ao lado refletem o desempenho da indústria em Pernambuco e nos demais estados do Nordeste, além de sua média agregada. Pernambuco teve o segundo melhor desemprenho do país na Pesquisa Industrial desse mês. A variação em relação ao mês anterior foi de 12.2% a maior do nordeste. 
  
-- O mesmo destaque é válido ao observar os resultados em comparação com o mês imediatamente anterior, com um crescimento ligeiramente superior a 11%. Esses números refletem uma tendência positiva e um desempenho robusto no setor industrial, especialmente notável dada a sazonalidade inerente ao período.
-
-- Espera-se uma maior volatilidade nesta época do ano devido à sazonalidade esperada. Apesar do otimismo inicial em relação à conjuntura econômica para o ano de 2024, prevê-se um crescimento moderado, influenciado pela política monetária ainda em níveis restritivos e uma demanda enfraquecida, mesmo com a perspectiva de queda de juros e um mercado de trabalho resiliente.
- 
+- O mesmo destaque é válido ao observar os resultados em comparação com o mesmo período no ano anterior (variação interanual), com um crescimento ligeiramente superior a 13%. Embora no Brasil, A indústria teve queda de 0,5% no mês, maior que o consenso de mercado (-0,4%).
  
 ::: {.callout-note}
  
@@ -527,9 +524,9 @@ interanual_data_long %>%
 
 ## Pesquisa Mensal de Serviços (PMS)
 
-- O resultado nacional de dezembro, o setor de serviços registrou um aumento de 0,3%, abaixo da expectativa de mercado de 0,8%. Apesar disso, três das cinco atividades analisadas apresentaram crescimento. Com essa segunda alta consecutiva, o setor encerrou o ano de 2023 com um crescimento de 2,3%, porém, houve uma queda de 2% em comparação com dezembro de 2022.
+- O resultado nacional de abril foi melhor que a expectativa do mercado, que era de 0,2%. A variação anual foi de 5,3%, devido à base de comparação fraca (queda de 2,2% em abril de 2023) e ao fato de abril deste ano ter mais dias úteis.
 
-- O desempenho anual do setor de serviços em Pernambuco foi positivo tanto na receita quanto no volume, registrando um aumento de 6,45% e 3,34%, respectivamente. Esses números refletem uma tendência positiva, enquanto os outros resultados são mais afetados pela sazonalidade associada ao período de fim de ano.
+- O desempenho anual do setor de serviços em Pernambuco também foi positivo, tanto na receita quanto no volume, registrando saldo positivo em todas as métricas observadas. Destaca-se a variação em comparação com o mesmo período do ano anterior (interanual), que foi de 8,14% na receita e 6,63% no volume.
 
 ::: {.callout-note}
  
@@ -600,9 +597,9 @@ tabpms_long %>%
 
 ## Pesquisa Mensal do Comércio (PMC)
 
-- No resultado nacional, o volume de vendas no varejo caiu 1,3% no mês de dezembro na série com ajuste sazonal, em contraste com a expectativa de alta do mercado de 0,4%. No entanto, ao longo do ano, o índice apresentou um crescimento de 1,7%, e 1,3% em comparação com o mesmo período de 2022. 
+- No resultado nacional, as vendas no varejo cresceram 0,9%, abaixo da expectativa do mercado de 1,7%. Comparado a abril de 2023, o índice cresceu 2,2%. No acumulado do ano, o crescimento foi de 4,9%, o melhor resultado para abril desde 2014. 
 
-- O desempenho em Pernambuco durante o ano foi positivo, com um aumento de 4,66% na receita e de 2,09% no volume. O único resultado negativo foi referente à margem, ambos negativos. Esses valores também podem ser atribuídos à maior sazonalidade do período. 
+- O desempenho em Pernambuco durante o ano continua positivo, com um resultado de 7,63% na receita e de 6,07% no volume. O único resultado negativo foi referente à margem (comparação com o mês anterior), ambos negativos. 
 
 - Ao analisarmos os setores, os destaques são: Livros, jornais, revistas e papelaria, Veículos, motocicletas, partes e peças, e Móveis. (**Consultar valores na tabela ao lado**)
 
