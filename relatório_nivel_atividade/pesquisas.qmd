@@ -1,10 +1,11 @@
 ---
 title: "<img src ='logo2.png' height='40'> Relatório - Pesquisas Mensais (PIM, PMC, PMS)"
 author: 'Núcleo de Dados <br><span style = "font-size: 110%;">ADEPE<br><a href="https://github.com/dteconometrics">`r fontawesome::fa("github", fill = "#282f6b")`</a>&nbsp; <a href="https://www.linkedin.com/in/vinicius-limeira-565117180/">`r fontawesome::fa("linkedin", fill = "#282f6b")`</a>&nbsp; <a href="mailto:vinicius.valenca@adepe.pe.gov.br">`r fontawesome::fa("envelope", fill = "#282f6b")`</a>&nbsp; <a href="https://www.adepe.pe.gov.br/">`r fontawesome::fa("home", fill = "#282f6b")`</a></span>'
-date: "2024-03-13"
+date: "2023-12-12"
 lang: pt
 format: 
   html:
+    theme: Morph
     page-layout: full
     fig-width: 4.5
     fig-height: 3
@@ -447,6 +448,8 @@ ampliado_long_pe =
 - Os resultados apresentados na tabela ao lado refletem o desempenho da indústria em Pernambuco e nos demais estados do Nordeste, além de sua média agregada. Pernambuco teve o segundo melhor desemprenho do país na Pesquisa Industrial desse mês. A variação em relação ao mês anterior foi de 12.2% a maior do nordeste. 
  
 - O mesmo destaque é válido ao observar os resultados em comparação com o mesmo período no ano anterior (variação interanual), com um crescimento ligeiramente superior a 13%. Embora no Brasil, A indústria teve queda de 0,5% no mês, maior que o consenso de mercado (-0,4%).
+
+ 
  
 ::: {.callout-note}
  
@@ -510,7 +513,7 @@ interanual_data_long %>%
   geom_line(aes(x=date, y=valor, colour = variavel), size = 0.8)+
   scale_colour_manual(values = colours_4)+
     scale_x_date(breaks = pretty_breaks(n = 8), limits = c(as.Date("2019-01-01"), as.Date("2023-12-31")))+
-  theme_classic()+
+  theme_excel_new()+
   theme(legend.position = 'top',
         strip.text = element_text(size = 10, face = 'bold')) +
   labs(x = '', y = 'valor',
